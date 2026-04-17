@@ -1,0 +1,33 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Model / HF cache (in case HF_HOME is pointed here)
+.cache/
+huggingface/
+
+# Generated OCR output
+images/*.md
+
+# Sample inputs (uncomment if you don't want to commit test images)
+# *.png
+# *.jpg
+# *.jpeg
+# *.pdf
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
