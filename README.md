@@ -12,6 +12,7 @@ ocr-benchmarks/
 │   ├── ocr.py
 │   ├── requirements.txt
 │   └── README.md
+├── dots-mocr-test/          # rednote-hilab/dots.mocr
 └── ...                      # more subprojects as added
 ```
 
@@ -21,9 +22,10 @@ pinnings collide.
 
 ## Subprojects
 
-| Project                                  | Model                                                                 | Status   |
-| ---------------------------------------- | --------------------------------------------------------------------- | -------- |
-| [`qianfan-ocr-test`](qianfan-ocr-test/)  | [baidu/Qianfan-OCR](https://huggingface.co/baidu/Qianfan-OCR) (4B VL) | Testing  |
+| Project                                  | Model                                                                               | Status   |
+| ---------------------------------------- | ----------------------------------------------------------------------------------- | -------- |
+| [`qianfan-ocr-test`](qianfan-ocr-test/)  | [baidu/Qianfan-OCR](https://huggingface.co/baidu/Qianfan-OCR) (4B VL)               | Testing  |
+| [`dots-mocr-test`](dots-mocr-test/)      | [rednote-hilab/dots.mocr](https://huggingface.co/rednote-hilab/dots.mocr) (3B VL)   | Testing  |
 
 ## Adding a new model
 
