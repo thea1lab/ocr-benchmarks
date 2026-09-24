@@ -27,7 +27,7 @@ This is a monorepo of independent OCR-model test subprojects:
 1. Create `new-model-test/` with its own venv, `requirements.txt`, and
    `README.md`.
 2. Follow the structure of `lighton-ocr/` as a template.
-3. Add a row to the top-level README's subprojects table.
+3. Add the model to `bench/models.json` and run `python run.py`. That refreshes `RESULTS.md`.
 
 ## Style
 
