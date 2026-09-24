@@ -1,0 +1,74 @@
+[
+  {
+    "id": "rapidocr",
+    "name": "RapidOCR",
+    "dir": "rapidocr",
+    "params": "PP-OCRv6 small",
+    "license": "Apache-2.0",
+    "kind": "Detector + recognizer",
+    "url": "https://github.com/RapidAI/RapidOCR",
+    "prompt": null,
+    "run": true,
+    "note": "ONNX Runtime on CPU. The installed wheel ships the small PP-OCRv6 detection and recognition models."
+  },
+  {
+    "id": "ovis-ocr",
+    "name": "OvisOCR2",
+    "dir": "ovis-ocr",
+    "params": "0.8B",
+    "license": "Apache-2.0",
+    "kind": "End-to-end page parser",
+    "url": "https://huggingface.co/ATH-MaaS/OvisOCR2",
+    "prompt": "Official Markdown prompt, thinking disabled",
+    "run": true,
+    "note": "End-to-end. One image in, Markdown out. Greedy decoding, 2048 new tokens."
+  },
+  {
+    "id": "paddleocr-vl",
+    "name": "PaddleOCR-VL-1.6",
+    "dir": "paddleocr-vl",
+    "params": "0.9B",
+    "license": "Apache-2.0",
+    "kind": "Document VLM, single prompt",
+    "url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.6",
+    "prompt": "OCR:",
+    "run": true,
+    "note": "Single prompt OCR:, not Paddle's layout pipeline. The 1.6 checkpoint leaves out vision rope settings, so the runner fills those in before load."
+  },
+  {
+    "id": "glm-ocr",
+    "name": "GLM-OCR",
+    "dir": "glm-ocr",
+    "params": "0.9B",
+    "license": "MIT",
+    "kind": "Document VLM, single prompt",
+    "url": "https://huggingface.co/zai-org/GLM-OCR",
+    "prompt": "Text Recognition:",
+    "run": true,
+    "note": "Checkpoint only. The published page score uses the GLM-OCR SDK, which adds PP-DocLayout-V3 before recognition."
+  },
+  {
+    "id": "lighton-ocr",
+    "name": "LightOnOCR-2-1B",
+    "dir": "lighton-ocr",
+    "params": "1B",
+    "license": "Apache-2.0",
+    "kind": "End-to-end page parser",
+    "url": "https://huggingface.co/lightonai/LightOnOCR-2-1B",
+    "prompt": "Image only",
+    "run": true,
+    "note": "End-to-end. No text prompt, matching the model card. Greedy decoding, 2048 new tokens."
+  },
+  {
+    "id": "teleocr",
+    "name": "TeleOCR",
+    "dir": "teleocr",
+    "params": "1.2B",
+    "license": "Apache-2.0",
+    "kind": "End-to-end page parser",
+    "url": "https://huggingface.co/StarDoc-AI/TeleOCR",
+    "prompt": "Please output the text content from the image.",
+    "run": true,
+    "note": "Text prompt from the model card. This run uses transformers 4.57.1, which matches the model's own code. Newer transformers does not load it."
+  }
+]

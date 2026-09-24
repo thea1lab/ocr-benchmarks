@@ -15,7 +15,7 @@ this repo. Keep these honored across all subprojects.
 
 This is a monorepo of independent OCR-model test subprojects:
 
-- Each subproject (e.g. `qianfan-ocr-test/`) owns its own `requirements.txt`
+- Each subproject (e.g. `lighton-ocr/`) owns its own `requirements.txt`
   and `.venv/`. Don't share venvs — deps collide.
 - `images/` at the repo root holds shared test inputs. Reference them as
   `../images/...` from inside a subproject.
@@ -26,7 +26,7 @@ This is a monorepo of independent OCR-model test subprojects:
 
 1. Create `new-model-test/` with its own venv, `requirements.txt`, and
    `README.md`.
-2. Follow the structure of `qianfan-ocr-test/` as a template.
+2. Follow the structure of `lighton-ocr/` as a template.
 3. Add a row to the top-level README's subprojects table.
 
 ## Style

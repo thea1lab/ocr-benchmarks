@@ -18,6 +18,8 @@ huggingface/
 
 # Generated OCR output
 images/*.md
+results/logs/
+results/suites/
 
 # Sample inputs (uncomment if you don't want to commit test images)
 # *.png

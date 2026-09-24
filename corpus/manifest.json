@@ -1,0 +1,41 @@
+{
+  "pages": [
+    {
+      "id": "letter",
+      "task": "Clean letter",
+      "image": "corpus/pages/letter.png",
+      "reference": "corpus/pages/letter.txt",
+      "fields": ["order 1842", "Dock 3", "Helena Costa", "fragile"]
+    },
+    {
+      "id": "columns",
+      "task": "Two columns and a footnote",
+      "image": "corpus/pages/columns.png",
+      "reference": "corpus/pages/columns.txt",
+      "fields": ["Order 1842", "left column ends here", "Crate B holds oil", "right column ends here", "tide turns at 18:40"],
+      "note": "Page 1 of corpus/paper.pdf. Reading order is the left column, then the right column, then the footnote."
+    },
+    {
+      "id": "math",
+      "task": "Table and an equation",
+      "image": "corpus/pages/math.png",
+      "reference": "corpus/pages/math.txt",
+      "fields": ["Bolts", "2.5", "12.0", "136.0"],
+      "note": "Page 2 of corpus/paper.pdf."
+    },
+    {
+      "id": "skewed-receipt",
+      "task": "Tilted, faded receipt",
+      "image": "corpus/pages/skewed-receipt.jpg",
+      "reference": "corpus/pages/skewed-receipt.txt",
+      "fields": ["NORTHWIND MARKET", "Oat milk", "10.50", "Total", "18.40"]
+    },
+    {
+      "id": "photo-label",
+      "task": "Phone photo of a package",
+      "image": "images/chocolate.jpeg",
+      "fields": ["Nestle", "CHOCOLATERIA", "informacao nutricional", "valor energetico", "carboidratos", "proteinas", "375", "nao contem gluten"],
+      "note": "Real photo. Scored on the readable nutrition lines. The tiny print has no full transcript."
+    }
+  ]
+}

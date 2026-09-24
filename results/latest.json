@@ -1,0 +1,1270 @@
+{
+  "generated": "2026-09-24 19:07 UTC",
+  "machine": {
+    "cpu": "12th Gen Intel(R) Core(TM) i9-12900H",
+    "ram_gib": 31.0,
+    "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "vram_mib": 6144,
+    "vram_used_mib": 2137
+  },
+  "pages": [
+    {
+      "id": "letter",
+      "task": "Clean letter",
+      "image": "corpus/pages/letter.png",
+      "reference": "corpus/pages/letter.txt",
+      "fields": [
+        "order 1842",
+        "Dock 3",
+        "Helena Costa",
+        "fragile"
+      ]
+    },
+    {
+      "id": "columns",
+      "task": "Two columns and a footnote",
+      "image": "corpus/pages/columns.png",
+      "reference": "corpus/pages/columns.txt",
+      "fields": [
+        "Order 1842",
+        "left column ends here",
+        "Crate B holds oil",
+        "right column ends here",
+        "tide turns at 18:40"
+      ],
+      "note": "Page 1 of corpus/paper.pdf. Reading order is the left column, then the right column, then the footnote."
+    },
+    {
+      "id": "math",
+      "task": "Table and an equation",
+      "image": "corpus/pages/math.png",
+      "reference": "corpus/pages/math.txt",
+      "fields": [
+        "Bolts",
+        "2.5",
+        "12.0",
+        "136.0"
+      ],
+      "note": "Page 2 of corpus/paper.pdf."
+    },
+    {
+      "id": "skewed-receipt",
+      "task": "Tilted, faded receipt",
+      "image": "corpus/pages/skewed-receipt.jpg",
+      "reference": "corpus/pages/skewed-receipt.txt",
+      "fields": [
+        "NORTHWIND MARKET",
+        "Oat milk",
+        "10.50",
+        "Total",
+        "18.40"
+      ]
+    },
+    {
+      "id": "photo-label",
+      "task": "Phone photo of a package",
+      "image": "images/chocolate.jpeg",
+      "fields": [
+        "Nestle",
+        "CHOCOLATERIA",
+        "informacao nutricional",
+        "valor energetico",
+        "carboidratos",
+        "proteinas",
+        "375",
+        "nao contem gluten"
+      ],
+      "note": "Real photo. Scored on the readable nutrition lines. The tiny print has no full transcript."
+    }
+  ],
+  "models": [
+    {
+      "id": "rapidocr",
+      "name": "RapidOCR",
+      "params": "PP-OCRv6 small",
+      "license": "Apache-2.0",
+      "kind": "Detector + recognizer",
+      "url": "https://github.com/RapidAI/RapidOCR",
+      "note": "ONNX Runtime on CPU. The installed wheel ships the small PP-OCRv6 detection and recognition models.",
+      "prior": null,
+      "status": "ok",
+      "pages": [
+        {
+          "id": "letter",
+          "task": "Clean letter",
+          "seconds": 0.96,
+          "looped": false,
+          "excerpt": "Northwind Supply\n14 March 2026\nDear Mina,\nPlease confirm the delivery for order 1842. The crates\nshould arrive at Dock 3 before 16:00. Two of the crates\nare marked fragile.\nThank you,\nHelena Costa\nAccounts",
+          "output": "results/outputs/rapidocr/letter.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "order 1842",
+                "hit": true
+              },
+              {
+                "field": "Dock 3",
+                "hit": true
+              },
+              {
+                "field": "Helena Costa",
+                "hit": true
+              },
+              {
+                "field": "fragile",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "columns",
+          "task": "Two columns and a footnote",
+          "seconds": 1.7,
+          "looped": false,
+          "excerpt": "Harbor Notes\nSpare parts\nThe crane arrived on Tuesday.\nCrate A holds bolts. Crate B holds\nOrder 1842 is still open. Dock 3\noil. Paint is stored in crate C.\ncloses at 16:00.\nThe right column ends here.\nInspectors counted the crates\ntwice. The left column ends here.\nNote 1. The tide turns at 18:40, so the barge must leave before then.",
+          "output": "results/outputs/rapidocr/columns.md",
+          "cer": 0.45345345345345345,
+          "fields": {
+            "found": 4,
+            "total": 5,
+            "fields": [
+              {
+                "field": "Order 1842",
+                "hit": true
+              },
+              {
+                "field": "left column ends here",
+                "hit": true
+              },
+              {
+                "field": "Crate B holds oil",
+                "hit": false
+              },
+              {
+                "field": "right column ends here",
+                "hit": true
+              },
+              {
+                "field": "tide turns at 18:40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "math",
+          "task": "Table and an equation",
+          "seconds": 1.01,
+          "looped": false,
+          "excerpt": "Load table\nItem\nWeight kg\nCount\nBolts\n2.5\n40\nl!O\n12.0\n3\nw = 2.5 * 40 + 12.0 * 3 = 136.0 kg",
+          "output": "results/outputs/rapidocr/math.md",
+          "cer": 0.0375,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "Bolts",
+                "hit": true
+              },
+              {
+                "field": "2.5",
+                "hit": true
+              },
+              {
+                "field": "12.0",
+                "hit": true
+              },
+              {
+                "field": "136.0",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "skewed-receipt",
+          "task": "Tilted, faded receipt",
+          "seconds": 1.03,
+          "looped": false,
+          "excerpt": "NORTHWIND MARKET\n14 March 2026\n12:41\n3.40\nOat milk\n4.50\nSourdough\n10.50\nCoffee beans\n18.40\nSubtotal\n0.00\nTax\n18.40\nTotal\nCard payment\nThank you",
+          "output": "results/outputs/rapidocr/skewed-receipt.md",
+          "cer": 0.16083916083916083,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "NORTHWIND MARKET",
+                "hit": true
+              },
+              {
+                "field": "Oat milk",
+                "hit": true
+              },
+              {
+                "field": "10.50",
+                "hit": true
+              },
+              {
+                "field": "Total",
+                "hit": true
+              },
+              {
+                "field": "18.40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "photo-label",
+          "task": "Phone photo of a package",
+          "seconds": 2.0,
+          "looped": false,
+          "excerpt": "Nestle\nCHOCOLATERIA\n0800-770241-www.nestle.com.br\nServi\u00e7e Nestle ao Consumidor\nNUTRITIONAL COMPASSS\na\u00e7ucar e aromatizante\nIngredientes: cacau em p\u00e9\nNestie\nN\u00c3O CONTEM GLUTEN\nFaz Bem\nen polvo, azicary\nIngredientes: Cacao\nINFORMA\u00c7\u00c3O NUTRICIONAL\nNO CONTIENE GLUTEN\naromatizante artificial\nPor\u00e7\u00f5es por embalagem: 10\n20g\n%VD*\nPor\u00e7\u00e3o: 20 g (2 Colheres de sopa)\n100g\n73\n4\n4\n375\n57\n11\n50\n10\n10\n20\nValor energ\u00e9tico (kcal)\n50\n2,3\n2\n5\nCarboidratos (g)\nA\u00e7\u00facares totais (g)\n6.5\n12\n0.7\n1.3\n4\nA\u00e7\u00facares adicionados (g",
+          "output": "results/outputs/rapidocr/photo-label.md",
+          "fields": {
+            "found": 8,
+            "total": 8,
+            "fields": [
+              {
+                "field": "Nestle",
+                "hit": true
+              },
+              {
+                "field": "CHOCOLATERIA",
+                "hit": true
+              },
+              {
+                "field": "informacao nutricional",
+                "hit": true
+              },
+              {
+                "field": "valor energetico",
+                "hit": true
+              },
+              {
+                "field": "carboidratos",
+                "hit": true
+              },
+              {
+                "field": "proteinas",
+                "hit": true
+              },
+              {
+                "field": "375",
+                "hit": true
+              },
+              {
+                "field": "nao contem gluten",
+                "hit": true
+              }
+            ]
+          }
+        }
+      ],
+      "device": "cpu",
+      "load_seconds": 0.2,
+      "vram_mib": 0.0,
+      "mean_cer": 0.16294815357315356,
+      "fields_found": 25,
+      "fields_total": 26,
+      "median_seconds": 1.03
+    },
+    {
+      "id": "ovis-ocr",
+      "name": "OvisOCR2",
+      "params": "0.8B",
+      "license": "Apache-2.0",
+      "kind": "End-to-end page parser",
+      "url": "https://huggingface.co/ATH-MaaS/OvisOCR2",
+      "note": "End-to-end. One image in, Markdown out. Greedy decoding, 2048 new tokens.",
+      "prior": null,
+      "status": "ok",
+      "pages": [
+        {
+          "id": "letter",
+          "task": "Clean letter",
+          "seconds": 36.83,
+          "looped": true,
+          "excerpt": "Northwind Supply\n\n14 March 2026\n\nDear Mina,\n\nPlease confirm the delivery for order 1842. The crates should arrive at Dock 3 before 16:00. Two of the crates are marked fragile.\n\nThank you,\n\nHelena Costa\n\nAccounts\n\n1\n\n1\n\n1",
+          "output": "results/outputs/ovis-ocr/letter.md",
+          "cer": 0.029556650246305417,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "order 1842",
+                "hit": true
+              },
+              {
+                "field": "Dock 3",
+                "hit": true
+              },
+              {
+                "field": "Helena Costa",
+                "hit": true
+              },
+              {
+                "field": "fragile",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "columns",
+          "task": "Two columns and a footnote",
+          "seconds": 34.72,
+          "looped": true,
+          "excerpt": "Harbor Notes\n\nThe crane arrived on Tuesday.\n\nOrder 1842 is still open. Dock 3\n\ncloses at 16:00.\n\nInspectors counted the crates\n\ntwice. The left column ends here.\n\nSpare parts\n\nCrate A holds bolts. Crate B holds oil. Paint is stored in crate C.\n\nThe right column ends here.\n\nNote 1. The tide turns at 18:40, so the barge must leave before then.",
+          "output": "results/outputs/ovis-ocr/columns.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "Order 1842",
+                "hit": true
+              },
+              {
+                "field": "left column ends here",
+                "hit": true
+              },
+              {
+                "field": "Crate B holds oil",
+                "hit": true
+              },
+              {
+                "field": "right column ends here",
+                "hit": true
+              },
+              {
+                "field": "tide turns at 18:40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "math",
+          "task": "Table and an equation",
+          "seconds": 35.79,
+          "looped": true,
+          "excerpt": "Load table\n\n<table border=\"1\"><tr><td>Item</td><td>Weight kg</td><td>Count</td></tr><tr><td>Bolts</td><td>2.5</td><td>40</td></tr><tr><td>Oil</td><td>12.0</td><td>3</td></tr></table>\n\n$$ w=2.5\\times40+12.0\\times3=136.0\\ \\text{kg} $$\n code\n code\n code",
+          "output": "results/outputs/ovis-ocr/math.md",
+          "cer": 0.1875,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "Bolts",
+                "hit": true
+              },
+              {
+                "field": "2.5",
+                "hit": true
+              },
+              {
+                "field": "12.0",
+                "hit": true
+              },
+              {
+                "field": "136.0",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "skewed-receipt",
+          "task": "Tilted, faded receipt",
+          "seconds": 34.26,
+          "looped": true,
+          "excerpt": "NORTHWIND MARKET\n\n14 March 2026\n\n12:41\n\nOat milk\n\n3.40\n\nSourdough\n\n4.50\n\nCoffee beans\n\n10.50\n\nSubtotal\n\n18.40\n\nTax\n\n0.00\n\nTotal\n\n18.40\n\nCard payment\n\nThank you\n<think>",
+          "output": "results/outputs/ovis-ocr/skewed-receipt.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "NORTHWIND MARKET",
+                "hit": true
+              },
+              {
+                "field": "Oat milk",
+                "hit": true
+              },
+              {
+                "field": "10.50",
+                "hit": true
+              },
+              {
+                "field": "Total",
+                "hit": true
+              },
+              {
+                "field": "18.40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "photo-label",
+          "task": "Phone photo of a package",
+          "seconds": 31.96,
+          "looped": true,
+          "excerpt": "Nestl\u00e9\n\nCHOCGLATERIA\n\nNestl\u00e9.\n\nFaz Bem\n\nGrua de Nestl\u00e9 CHOCOLATERIA\n\nDe todas as\n\nServicio Nestl\u00e9 al Consumidor\n\n0800-7700411 - www.nestl\u00e9.com.br",
+          "output": "results/outputs/ovis-ocr/photo-label.md",
+          "fields": {
+            "found": 7,
+            "total": 8,
+            "fields": [
+              {
+                "field": "Nestle",
+                "hit": true
+              },
+              {
+                "field": "CHOCOLATERIA",
+                "hit": true
+              },
+              {
+                "field": "informacao nutricional",
+                "hit": true
+              },
+              {
+                "field": "valor energetico",
+                "hit": true
+              },
+              {
+                "field": "carboidratos",
+                "hit": true
+              },
+              {
+                "field": "proteinas",
+                "hit": true
+              },
+              {
+                "field": "375",
+                "hit": true
+              },
+              {
+                "field": "nao contem gluten",
+                "hit": false
+              }
+            ]
+          }
+        }
+      ],
+      "device": "cuda",
+      "load_seconds": 40.07,
+      "vram_mib": 1934.0,
+      "mean_cer": 0.05426416256157635,
+      "fields_found": 25,
+      "fields_total": 26,
+      "median_seconds": 34.72
+    },
+    {
+      "id": "paddleocr-vl",
+      "name": "PaddleOCR-VL-1.6",
+      "params": "0.9B",
+      "license": "Apache-2.0",
+      "kind": "Document VLM, single prompt",
+      "url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.6",
+      "note": "Single prompt OCR:, not Paddle's layout pipeline. The 1.6 checkpoint leaves out vision rope settings, so the runner fills those in before load.",
+      "prior": null,
+      "status": "ok",
+      "pages": [
+        {
+          "id": "letter",
+          "task": "Clean letter",
+          "seconds": 27.47,
+          "looped": false,
+          "excerpt": "Northwind Supply\n14 March 2026\n\nDear Mina,\n\nPlease confirm the delivery for order 1842. The crates should arrive at Dock 3 before 16:00. Two of the crates are marked fragile.\n\nThank you,\nHelena Costa\nAccounts",
+          "output": "results/outputs/paddleocr-vl/letter.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "order 1842",
+                "hit": true
+              },
+              {
+                "field": "Dock 3",
+                "hit": true
+              },
+              {
+                "field": "Helena Costa",
+                "hit": true
+              },
+              {
+                "field": "fragile",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "columns",
+          "task": "Two columns and a footnote",
+          "seconds": 47.66,
+          "looped": false,
+          "excerpt": "Harbor Notes\nSpare parts\n\nThe crane arrived on Tuesday.\nOrder 1842 is still open. Dock 3\ncloses at 16:00.\n\nCrate A holds bolts. Crate B holds\noil. Paint is stored in crate C.\n\nThe right column ends here.\n\nNote 1. The tide turns at 18:40, so the barge must leave before then.",
+          "output": "results/outputs/paddleocr-vl/columns.md",
+          "cer": 0.26426426426426425,
+          "fields": {
+            "found": 4,
+            "total": 5,
+            "fields": [
+              {
+                "field": "Order 1842",
+                "hit": true
+              },
+              {
+                "field": "left column ends here",
+                "hit": false
+              },
+              {
+                "field": "Crate B holds oil",
+                "hit": true
+              },
+              {
+                "field": "right column ends here",
+                "hit": true
+              },
+              {
+                "field": "tide turns at 18:40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "math",
+          "task": "Table and an equation",
+          "seconds": 31.21,
+          "looped": false,
+          "excerpt": "Load table\n\nItem          Weight kg          Count\nBolts          2.5                40\nOil                12.0              3\n\nw = 2.5 * 40 + 12.0 * 3 = 136.0 kg",
+          "output": "results/outputs/paddleocr-vl/math.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "Bolts",
+                "hit": true
+              },
+              {
+                "field": "2.5",
+                "hit": true
+              },
+              {
+                "field": "12.0",
+                "hit": true
+              },
+              {
+                "field": "136.0",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "skewed-receipt",
+          "task": "Tilted, faded receipt",
+          "seconds": 30.01,
+          "looped": false,
+          "excerpt": "NORTHWIND MARKET\n14 March 2026\n12:41\nOat milk 3.40\nSourdough 4.50\nCoffee beans 10.50\nSubtotal 18.40\nTax 0.00\nTotal 18.40\nCard payment\nThank you",
+          "output": "results/outputs/paddleocr-vl/skewed-receipt.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "NORTHWIND MARKET",
+                "hit": true
+              },
+              {
+                "field": "Oat milk",
+                "hit": true
+              },
+              {
+                "field": "10.50",
+                "hit": true
+              },
+              {
+                "field": "Total",
+                "hit": true
+              },
+              {
+                "field": "18.40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "photo-label",
+          "task": "Phone photo of a package",
+          "seconds": 1132.59,
+          "looped": true,
+          "excerpt": "Nestl\u00e9\nCHOCOLATERIA\n\nPor\u00e7\u00f5es por embalagem: 10 por\u00e7\u00e3o: 20 g (2 Colheres de sopa)\nValor energ\u00e9tico (kcal)\nCarbohidratos (g)\n\u00c1quies totais (g)\nProte\u00ednas (g)\nGorduras saturadas (g)\nGorduras trans (g)\nFibras alimentares (g)\nSodio (mg)\nPercentual de valores di\u00e1rios fornecidos pela por\u00e7\u00e3o\nCarbohidratos 11 g (2%VD) Grasas saturadas 10 g (2%VD)\nCarbohidratos 11 g (1%VD) de los cuales Az\u00facares fobras 10 g (2%VD)\n(3%VD) Grasas totais 1.3 g (2%VD) Grasas saturadas 10.7 g (2%VD)\n(14%VD) Sodio 1.9 mg (0%VD) ",
+          "output": "results/outputs/paddleocr-vl/photo-label.md",
+          "fields": {
+            "found": 5,
+            "total": 8,
+            "fields": [
+              {
+                "field": "Nestle",
+                "hit": true
+              },
+              {
+                "field": "CHOCOLATERIA",
+                "hit": true
+              },
+              {
+                "field": "informacao nutricional",
+                "hit": true
+              },
+              {
+                "field": "valor energetico",
+                "hit": true
+              },
+              {
+                "field": "carboidratos",
+                "hit": false
+              },
+              {
+                "field": "proteinas",
+                "hit": true
+              },
+              {
+                "field": "375",
+                "hit": false
+              },
+              {
+                "field": "nao contem gluten",
+                "hit": false
+              }
+            ]
+          }
+        }
+      ],
+      "device": "cuda",
+      "load_seconds": 12.93,
+      "vram_mib": 1956.0,
+      "mean_cer": 0.06606606606606606,
+      "fields_found": 22,
+      "fields_total": 26,
+      "median_seconds": 31.21
+    },
+    {
+      "id": "glm-ocr",
+      "name": "GLM-OCR",
+      "params": "0.9B",
+      "license": "MIT",
+      "kind": "Document VLM, single prompt",
+      "url": "https://huggingface.co/zai-org/GLM-OCR",
+      "note": "Checkpoint only. The published page score uses the GLM-OCR SDK, which adds PP-DocLayout-V3 before recognition.",
+      "prior": null,
+      "status": "ok",
+      "pages": [
+        {
+          "id": "letter",
+          "task": "Clean letter",
+          "seconds": 2.77,
+          "looped": false,
+          "excerpt": "Northwind Supply\n14 March 2026\n\nDear Mina,\n\nPlease confirm the delivery for order 1842. The crates should arrive at Dock 3 before 16:00. Two of the crates are marked fragile.\n\nThank you,\nHelena Costa\nAccounts",
+          "output": "results/outputs/glm-ocr/letter.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "order 1842",
+                "hit": true
+              },
+              {
+                "field": "Dock 3",
+                "hit": true
+              },
+              {
+                "field": "Helena Costa",
+                "hit": true
+              },
+              {
+                "field": "fragile",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "columns",
+          "task": "Two columns and a footnote",
+          "seconds": 2.18,
+          "looped": false,
+          "excerpt": "Harbor Notes\n\nThe crane arrived on Tuesday. Order 1842 is still open. Dock 3 closes at 16:00.\n\nInspectors counted the crates twice. The left column ends here.\n\nSpare parts\n\nCrate A holds bolts. Crate B holds oil. Paint is stored in crate C.\n\nThe right column ends here.\n\nNote 1. The tide turns at 18:40, so the barge must leave before then.",
+          "output": "results/outputs/glm-ocr/columns.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "Order 1842",
+                "hit": true
+              },
+              {
+                "field": "left column ends here",
+                "hit": true
+              },
+              {
+                "field": "Crate B holds oil",
+                "hit": true
+              },
+              {
+                "field": "right column ends here",
+                "hit": true
+              },
+              {
+                "field": "tide turns at 18:40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "math",
+          "task": "Table and an equation",
+          "seconds": 1.28,
+          "looped": false,
+          "excerpt": "Load table\n\n| Item | Weight kg | Count |\n| :--- | :--- | :--- |\n| Bolts | 2.5 | 40 |\n| Oil | 12.0 | 3 |\n\n$w = 2.5 * 40 + 12.0 * 3 = 136.0 \\text{ kg}$",
+          "output": "results/outputs/glm-ocr/math.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "Bolts",
+                "hit": true
+              },
+              {
+                "field": "2.5",
+                "hit": true
+              },
+              {
+                "field": "12.0",
+                "hit": true
+              },
+              {
+                "field": "136.0",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "skewed-receipt",
+          "task": "Tilted, faded receipt",
+          "seconds": 1.06,
+          "looped": false,
+          "excerpt": "NORTHWIND MARKET\n14 March 2026\n12:41\n\nOat milk 3.40\nSourdough 4.50\nCoffee beans 10.50\n\nSubtotal 18.40\nTax 0.00\nTotal 18.40\n\nCard payment\nThank you",
+          "output": "results/outputs/glm-ocr/skewed-receipt.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "NORTHWIND MARKET",
+                "hit": true
+              },
+              {
+                "field": "Oat milk",
+                "hit": true
+              },
+              {
+                "field": "10.50",
+                "hit": true
+              },
+              {
+                "field": "Total",
+                "hit": true
+              },
+              {
+                "field": "18.40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "photo-label",
+          "task": "Phone photo of a package",
+          "seconds": 29.75,
+          "looped": false,
+          "excerpt": "Nestle\nCHOCOLATERIA\nOma dua NESTLE\u00ae CHOCOLATERIA\nRe admiss\u00f5es feitas com chocolate s\u00e3o sublimadas a prepara\u00e7\u00e3o em\nmomento algerite e posse de az\u00facares. Consumir com mordre\na chocolata pode fazer para de uma alimenta\u00e7\u00e3o equilibrada\nServi\u00e7o Nestle ao Consumidor\n0800-7702411 - www.nestle.com.br\nServi\u00e7o Nestle al Consumidor\nPY: 0800 11 2121 - www.nestle.com.py\nNUTRITIONAL COMPASS\u00ae\n\u00a9 Marca Registrada de Soci\u00e9t\u00e9 des Produits Nestl\u00e9 S.A.\nINFORMA\u00c7\u00c3O NUTRICIONAL\nPor\u00e7\u00f5es por embalagem: 10\nPor\u00e7\u00e3o: 20 g (2 ",
+          "output": "results/outputs/glm-ocr/photo-label.md",
+          "fields": {
+            "found": 8,
+            "total": 8,
+            "fields": [
+              {
+                "field": "Nestle",
+                "hit": true
+              },
+              {
+                "field": "CHOCOLATERIA",
+                "hit": true
+              },
+              {
+                "field": "informacao nutricional",
+                "hit": true
+              },
+              {
+                "field": "valor energetico",
+                "hit": true
+              },
+              {
+                "field": "carboidratos",
+                "hit": true
+              },
+              {
+                "field": "proteinas",
+                "hit": true
+              },
+              {
+                "field": "375",
+                "hit": true
+              },
+              {
+                "field": "nao contem gluten",
+                "hit": true
+              }
+            ]
+          }
+        }
+      ],
+      "device": "cuda",
+      "load_seconds": 56.78,
+      "vram_mib": 2506.0,
+      "mean_cer": 0.0,
+      "fields_found": 26,
+      "fields_total": 26,
+      "median_seconds": 2.18
+    },
+    {
+      "id": "lighton-ocr",
+      "name": "LightOnOCR-2-1B",
+      "params": "1B",
+      "license": "Apache-2.0",
+      "kind": "End-to-end page parser",
+      "url": "https://huggingface.co/lightonai/LightOnOCR-2-1B",
+      "note": "End-to-end. No text prompt, matching the model card. Greedy decoding, 2048 new tokens.",
+      "prior": null,
+      "status": "ok",
+      "pages": [
+        {
+          "id": "letter",
+          "task": "Clean letter",
+          "seconds": 2.29,
+          "looped": false,
+          "excerpt": "Northwind Supply  \n14 March 2026\n\nDear Mina,\n\nPlease confirm the delivery for order 1842. The crates should arrive at Dock 3 before 16:00. Two of the crates are marked fragile.\n\nThank you,  \nHelena Costa  \nAccounts",
+          "output": "results/outputs/lighton-ocr/letter.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "order 1842",
+                "hit": true
+              },
+              {
+                "field": "Dock 3",
+                "hit": true
+              },
+              {
+                "field": "Helena Costa",
+                "hit": true
+              },
+              {
+                "field": "fragile",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "columns",
+          "task": "Two columns and a footnote",
+          "seconds": 2.49,
+          "looped": false,
+          "excerpt": "Harbor Notes\n\nThe crane arrived on Tuesday.  \nOrder 1842 is still open. Dock 3 closes at 16:00.\n\nInspectors counted the crates twice. The left column ends here.\n\nSpare parts\n\nCrate A holds bolts. Crate B holds oil. Paint is stored in crate C.\n\nThe right column ends here.\n\n---\n\nNote 1. The tide turns at 18:40, so the barge must leave before then.",
+          "output": "results/outputs/lighton-ocr/columns.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "Order 1842",
+                "hit": true
+              },
+              {
+                "field": "left column ends here",
+                "hit": true
+              },
+              {
+                "field": "Crate B holds oil",
+                "hit": true
+              },
+              {
+                "field": "right column ends here",
+                "hit": true
+              },
+              {
+                "field": "tide turns at 18:40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "math",
+          "task": "Table and an equation",
+          "seconds": 2.37,
+          "looped": false,
+          "excerpt": "# Load table\n\n<table>\n  <tr>\n    <th>Item</th>\n    <th>Weight kg</th>\n    <th>Count</th>\n  </tr>\n  <tr>\n    <td>Bolts</td>\n    <td>2.5</td>\n    <td>40</td>\n  </tr>\n  <tr>\n    <td>Oil</td>\n    <td>12.0</td>\n    <td>3</td>\n  </tr>\n</table>\n\n$$\nw = 2.5 * 40 + 12.0 * 3 = 136.0 \\text{ kg}\n$$",
+          "output": "results/outputs/lighton-ocr/math.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "Bolts",
+                "hit": true
+              },
+              {
+                "field": "2.5",
+                "hit": true
+              },
+              {
+                "field": "12.0",
+                "hit": true
+              },
+              {
+                "field": "136.0",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "skewed-receipt",
+          "task": "Tilted, faded receipt",
+          "seconds": 2.87,
+          "looped": false,
+          "excerpt": "NORTHWIND MARKET  \n14 March 2026  \n12:41\n\n<table>\n  <tr>\n    <td>Oat milk</td>\n    <td>3.40</td>\n  </tr>\n  <tr>\n    <td>Sourdough</td>\n    <td>4.50</td>\n  </tr>\n  <tr>\n    <td>Coffee beans</td>\n    <td>10.50</td>\n  </tr>\n  <tr>\n    <td>Subtotal</td>\n    <td>18.40</td>\n  </tr>\n  <tr>\n    <td>Tax</td>\n    <td>0.00</td>\n  </tr>\n  <tr>\n    <td>Total</td>\n    <td>18.40</td>\n  </tr>\n</table>\n\nCard payment  \nThank you",
+          "output": "results/outputs/lighton-ocr/skewed-receipt.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "NORTHWIND MARKET",
+                "hit": true
+              },
+              {
+                "field": "Oat milk",
+                "hit": true
+              },
+              {
+                "field": "10.50",
+                "hit": true
+              },
+              {
+                "field": "Total",
+                "hit": true
+              },
+              {
+                "field": "18.40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "photo-label",
+          "task": "Phone photo of a package",
+          "seconds": 26.53,
+          "looped": true,
+          "excerpt": "# Nestl\u00e9\n\n## CHOCOLATERIA\n\nNesta abra NESTL\u00c9\u00ae CHOCOLATENIA  \nNo entramos telem como chocolate s\u00e9 subreto y proporcional  \nporcino al\u00e9gra e perto apela as rela\u00e7\u00f5es. Consumida com mante  \nchocolato perto b\u00e3o, perto de uma alimenta\u00e7\u00e3o equil\u00edbrio\n\nServi\u00e7o Nestl\u00e9 ao Consumidor  \n0800-7705411 - www.nestle.com.br  \nServi\u00e7o Nestl\u00e9 al Consumidor  \n0800 11 2121 - www.nestle.com.py  \nNUTRITIONAL COMPASS\u00ae  \n\u00aeMarca Registrada de Sociedade de Nutri\u00e7\u00e3o\n\n---\n\n**Nestl\u00e9**  \nFaz Beim\n\n---\n\n## INFORMA\u00c7\u00c3O NUTRICIONA",
+          "output": "results/outputs/lighton-ocr/photo-label.md",
+          "fields": {
+            "found": 8,
+            "total": 8,
+            "fields": [
+              {
+                "field": "Nestle",
+                "hit": true
+              },
+              {
+                "field": "CHOCOLATERIA",
+                "hit": true
+              },
+              {
+                "field": "informacao nutricional",
+                "hit": true
+              },
+              {
+                "field": "valor energetico",
+                "hit": true
+              },
+              {
+                "field": "carboidratos",
+                "hit": true
+              },
+              {
+                "field": "proteinas",
+                "hit": true
+              },
+              {
+                "field": "375",
+                "hit": true
+              },
+              {
+                "field": "nao contem gluten",
+                "hit": true
+              }
+            ]
+          }
+        }
+      ],
+      "device": "cuda",
+      "load_seconds": 7.39,
+      "vram_mib": 2374.0,
+      "mean_cer": 0.0,
+      "fields_found": 26,
+      "fields_total": 26,
+      "median_seconds": 2.49
+    },
+    {
+      "id": "teleocr",
+      "name": "TeleOCR",
+      "params": "1.2B",
+      "license": "Apache-2.0",
+      "kind": "End-to-end page parser",
+      "url": "https://huggingface.co/StarDoc-AI/TeleOCR",
+      "note": "Text prompt from the model card. This run uses transformers 4.57.1, which matches the model's own code. Newer transformers does not load it.",
+      "prior": null,
+      "status": "ok",
+      "pages": [
+        {
+          "id": "letter",
+          "task": "Clean letter",
+          "seconds": 2.08,
+          "looped": false,
+          "excerpt": "Northwind Supply\n14 March 2026\nDear Mina,\nPlease confirm the delivery for order 1842. The crates should arrive at Dock 3 before 16:00. Two of the crates are marked fragile.\nThank you,\nHelena Costa\nAccounts",
+          "output": "results/outputs/teleocr/letter.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 4,
+            "total": 4,
+            "fields": [
+              {
+                "field": "order 1842",
+                "hit": true
+              },
+              {
+                "field": "Dock 3",
+                "hit": true
+              },
+              {
+                "field": "Helena Costa",
+                "hit": true
+              },
+              {
+                "field": "fragile",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "columns",
+          "task": "Two columns and a footnote",
+          "seconds": 2.02,
+          "looped": false,
+          "excerpt": "Harbor Notes Spare parts\nThe crane arrived on Tuesday. Crate A holds bolts. Crate B holds oil. Paint is stored in crate C.\nC\nThe right column ends here.\nInspectors counted the crates twice. The left column ends here.\n# Note 1. The tide turns at 18:40, so the barge must leave before then.",
+          "output": "results/outputs/teleocr/columns.md",
+          "cer": 0.40540540540540543,
+          "fields": {
+            "found": 4,
+            "total": 5,
+            "fields": [
+              {
+                "field": "Order 1842",
+                "hit": false
+              },
+              {
+                "field": "left column ends here",
+                "hit": true
+              },
+              {
+                "field": "Crate B holds oil",
+                "hit": true
+              },
+              {
+                "field": "right column ends here",
+                "hit": true
+              },
+              {
+                "field": "tide turns at 18:40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "math",
+          "task": "Table and an equation",
+          "seconds": 1.54,
+          "looped": false,
+          "excerpt": "<box:043 045 228 049><label:title><up>\n<box:044 113 855 301><label:table><up>\n<box:038 406 595 443><label:text><up>",
+          "output": "results/outputs/teleocr/math.md",
+          "cer": 1.0,
+          "fields": {
+            "found": 0,
+            "total": 4,
+            "fields": [
+              {
+                "field": "Bolts",
+                "hit": false
+              },
+              {
+                "field": "2.5",
+                "hit": false
+              },
+              {
+                "field": "12.0",
+                "hit": false
+              },
+              {
+                "field": "136.0",
+                "hit": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "skewed-receipt",
+          "task": "Tilted, faded receipt",
+          "seconds": 1.5,
+          "looped": false,
+          "excerpt": "NORTHWIND MARKET\n14 March 2026\n12:41\nOat milk 3.40\nSourdough 4.50\nCoffee beans 10.50\nSubtotal 18.40\nTax 0.00\nTotal 18.40\nCard payment\nThank you",
+          "output": "results/outputs/teleocr/skewed-receipt.md",
+          "cer": 0.0,
+          "fields": {
+            "found": 5,
+            "total": 5,
+            "fields": [
+              {
+                "field": "NORTHWIND MARKET",
+                "hit": true
+              },
+              {
+                "field": "Oat milk",
+                "hit": true
+              },
+              {
+                "field": "10.50",
+                "hit": true
+              },
+              {
+                "field": "Total",
+                "hit": true
+              },
+              {
+                "field": "18.40",
+                "hit": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "photo-label",
+          "task": "Phone photo of a package",
+          "seconds": 29.95,
+          "looped": false,
+          "excerpt": "INFORMA\u00c7\u00c3O NUTRICIONAL\nPor\u00e7\u00f5es por embalagem: 10\nPor\u00e7\u00e3o: 20 g (2 Colheres de sopa)\nValor energ\u00e9tico (kcal) 100 g 20 g %VD*\nCarboidratos (g) 375 73 4\nA\u00e7\u00facares totais (g) 57 11 4\nA\u00e7\u00facares adicionados (g) 50 10 20\nProteinas (g) 12 2.3 5\nGorduras totais (g) 6.5 1.3 2\nGorduras saturadas (g) 3.3 0.7 4\nFibras aliments (g) 0 0 0\nSodic (mg) 18 3.5 14\nPercentile of gondrode (gondrode) 100 g 20 g 20 g\nIncentrode (20%) of gondrode (20%) of gondrode (20%) of gondrode (20%) of gondrode (20%) of gondrode (20%)",
+          "output": "results/outputs/teleocr/photo-label.md",
+          "fields": {
+            "found": 5,
+            "total": 8,
+            "fields": [
+              {
+                "field": "Nestle",
+                "hit": false
+              },
+              {
+                "field": "CHOCOLATERIA",
+                "hit": false
+              },
+              {
+                "field": "informacao nutricional",
+                "hit": true
+              },
+              {
+                "field": "valor energetico",
+                "hit": true
+              },
+              {
+                "field": "carboidratos",
+                "hit": true
+              },
+              {
+                "field": "proteinas",
+                "hit": true
+              },
+              {
+                "field": "375",
+                "hit": true
+              },
+              {
+                "field": "nao contem gluten",
+                "hit": false
+              }
+            ]
+          }
+        }
+      ],
+      "device": "cuda",
+      "load_seconds": 4.86,
+      "vram_mib": 2813.0,
+      "mean_cer": 0.35135135135135137,
+      "fields_found": 18,
+      "fields_total": 26,
+      "median_seconds": 2.02
+    }
+  ]
+}
