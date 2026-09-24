@@ -31,6 +31,13 @@
       "fields": ["NORTHWIND MARKET", "Oat milk", "10.50", "Total", "18.40"]
     },
     {
+      "id": "table",
+      "task": "Invoice tax and product table",
+      "image": "corpus/pages/table.png",
+      "fields": ["3.254,07", "5763764", "NOTEBOOK", "84713019", "5405", "1.0000", "4.000", "Emitente", "2821,85", "117,42"],
+      "note": "Real NF-e block. Scored on the filled-in amounts, the product code, NCM, CFOP, freight payer, weight, and the two retained-tax lines. The 0,00 cells are not required."
+    },
+    {
       "id": "photo-label",
       "task": "Phone photo of a package",
       "image": "images/chocolate.jpeg",

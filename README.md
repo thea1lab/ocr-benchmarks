@@ -33,27 +33,28 @@ and output excerpts are in [`RESULTS.md`](RESULTS.md). The same table is in
 
 | Model | Median s/page | Load s | Character accuracy | Fields |
 | --- | ---: | ---: | ---: | ---: |
-| [RapidOCR](rapidocr/) | 1.0 | 0.2 | 84% | 25/26 |
-| [OvisOCR2](ovis-ocr/) | 34.7 | 40.1 | 95% | 25/26 |
-| [PaddleOCR-VL-1.6](paddleocr-vl/) | 31.2 | 12.9 | 93% | 22/26 |
-| [GLM-OCR](glm-ocr/) | 2.2 | 56.8 | 100% | 26/26 |
-| [LightOnOCR-2-1B](lighton-ocr/) | 2.5 | 7.4 | 100% | 26/26 |
-| [TeleOCR](teleocr/) | 2.0 | 4.9 | 65% | 18/26 |
+| [RapidOCR](rapidocr/) | 1.7 | 0.2 | 84% | 33/36 |
+| [OvisOCR2](ovis-ocr/) | 34.7 | 40.1 | 95% | 34/36 |
+| [PaddleOCR-VL-1.6](paddleocr-vl/) | 47.7 | 12.9 | 93% | 29/36 |
+| [GLM-OCR](glm-ocr/) | 2.8 | 56.8 | 100% | 27/36 |
+| [LightOnOCR-2-1B](lighton-ocr/) | 2.9 | 7.4 | 100% | 36/36 |
+| [TeleOCR](teleocr/) | 2.1 | 4.9 | 65% | 24/36 |
 
 Character accuracy is the transcript match on the drawn pages. Markup is
 ignored, and so is a tail a model repeats after a good read. Fields are the
-26 facts in [`corpus/manifest.json`](corpus/manifest.json): an order number,
-a total, a footnote, a table cell. Seconds per page are warm extraction,
-after the weights have loaded.
+36 facts in [`corpus/manifest.json`](corpus/manifest.json): an order number,
+a total, a footnote, a table cell, and the amounts on a real invoice.
+Seconds per page are warm extraction, after the weights have loaded.
 
-GLM-OCR and LightOnOCR-2-1B are the only two that got every fact. LightOn
-is the faster of those two once it is loaded. RapidOCR is the one-second
-CPU option. It reads a single column and a receipt, and it reads the two
-columns on the same line.
+LightOnOCR-2-1B is the only model that got every fact, including the invoice
+total `3.254,07`, the product code, and the retained-tax lines. GLM-OCR
+still reads the drawn pages cleanly and misses most of that invoice.
+RapidOCR is the fast CPU option. It reads a single column and a receipt,
+and it reads the two columns on the same line.
 
 The pages are a clean letter, a two-column page with a footnote, a table
-plus an equation, a tilted receipt, and the package photo. The two hard
-pages are also `corpus/paper.pdf`.
+plus an equation, a tilted receipt, a real NF-e tax and product block, and
+the package photo. The two hard drawn pages are also `corpus/paper.pdf`.
 
 ```bash
 python run.py                  # every model

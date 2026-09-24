@@ -15,7 +15,7 @@ pre { white-space: pre-wrap; background: #f3efe6; padding: 8px; }
 2137 of 6144 MiB already in use.
 2026-09-24 19:07 UTC.</p>
 <table><thead><tr><th>Model</th><th>Result</th><th>Median s/page</th><th>Load s</th><th>Character accuracy</th><th>Fields</th></tr></thead>
-<tbody><tr><td>RapidOCR<div class='muted'>PP-OCRv6 small</div></td><td>ok</td><td class='num'>1.03</td><td class='num'>0.20</td><td class='num'>84%</td><td class='num'>25/26</td></tr><tr><td>OvisOCR2<div class='muted'>0.8B</div></td><td>ok</td><td class='num'>34.72</td><td class='num'>40.07</td><td class='num'>95%</td><td class='num'>25/26</td></tr><tr><td>PaddleOCR-VL-1.6<div class='muted'>0.9B</div></td><td>ok</td><td class='num'>31.21</td><td class='num'>12.93</td><td class='num'>93%</td><td class='num'>22/26</td></tr><tr><td>GLM-OCR<div class='muted'>0.9B</div></td><td>ok</td><td class='num'>2.18</td><td class='num'>56.78</td><td class='num'>100%</td><td class='num'>26/26</td></tr><tr><td>LightOnOCR-2-1B<div class='muted'>1B</div></td><td>ok</td><td class='num'>2.49</td><td class='num'>7.39</td><td class='num'>100%</td><td class='num'>26/26</td></tr><tr><td>TeleOCR<div class='muted'>1.2B</div></td><td>ok</td><td class='num'>2.02</td><td class='num'>4.86</td><td class='num'>65%</td><td class='num'>18/26</td></tr></tbody></table>
+<tbody><tr><td>RapidOCR<div class='muted'>PP-OCRv6 small</div></td><td>ok</td><td class='num'>1.70</td><td class='num'>0.20</td><td class='num'>84%</td><td class='num'>33/36</td></tr><tr><td>OvisOCR2<div class='muted'>0.8B</div></td><td>ok</td><td class='num'>34.72</td><td class='num'>40.07</td><td class='num'>95%</td><td class='num'>34/36</td></tr><tr><td>PaddleOCR-VL-1.6<div class='muted'>0.9B</div></td><td>ok</td><td class='num'>47.66</td><td class='num'>12.93</td><td class='num'>93%</td><td class='num'>29/36</td></tr><tr><td>GLM-OCR<div class='muted'>0.9B</div></td><td>ok</td><td class='num'>2.77</td><td class='num'>56.78</td><td class='num'>100%</td><td class='num'>27/36</td></tr><tr><td>LightOnOCR-2-1B<div class='muted'>1B</div></td><td>ok</td><td class='num'>2.87</td><td class='num'>7.39</td><td class='num'>100%</td><td class='num'>36/36</td></tr><tr><td>TeleOCR<div class='muted'>1.2B</div></td><td>ok</td><td class='num'>2.08</td><td class='num'>4.86</td><td class='num'>65%</td><td class='num'>24/36</td></tr></tbody></table>
 <h2>Clean letter</h2><table><thead><tr><th>Model</th><th>Seconds</th><th>Character accuracy</th><th>Fields</th></tr></thead><tbody><tr><td>RapidOCR</td><td class='num'>0.96</td><td class='num'>100%</td><td>4/4</td></tr><tr><td colspan='4'><pre>Northwind Supply
 14 March 2026
 Dear Mina,
@@ -315,7 +315,145 @@ Subtotal 18.40
 Tax 0.00
 Total 18.40
 Card payment
-Thank you</pre></td></tr></tbody></table><h2>Phone photo of a package</h2><p class='muted'>Real photo. Scored on the readable nutrition lines. The tiny print has no full transcript.</p><table><thead><tr><th>Model</th><th>Seconds</th><th>Character accuracy</th><th>Fields</th></tr></thead><tbody><tr><td>RapidOCR</td><td class='num'>2.00</td><td class='num'>—</td><td>8/8</td></tr><tr><td colspan='4'><pre>Nestle
+Thank you</pre></td></tr></tbody></table><h2>Invoice tax and product table</h2><p class='muted'>Real NF-e block. Scored on the filled-in amounts, the product code, NCM, CFOP, freight payer, weight, and the two retained-tax lines. The 0,00 cells are not required.</p><table><thead><tr><th>Model</th><th>Seconds</th><th>Character accuracy</th><th>Fields</th></tr></thead><tbody><tr><td>RapidOCR</td><td class='num'>2.42</td><td class='num'>—</td><td>8/10, missed NOTEBOOK, 84713019</td></tr><tr><td colspan='4'><pre>CÁLCULO DO IMPOSTO
+BASE DE CÁLCULO DO ICMS
+VALOR DO ICMS
+BASE DE CÁLCULO DO ICMS ST VALOR DO ICMS ST
+VALOR APROXIMADO DOS TRIBUTOS
+VALOR TOTAL DOS PRODUTOS
+0,00
+0,00
+0,00
+3.254,07
+VALOR DO FRETE
+VALOR DO SEGURO
+DESCONTO
+OUTRAS DESPESAS ACESSÓRIAS
+VALOR DO IPI
+VALOR TOTAL DA NOTA
+0,00
+0,00
+0,00
+3.254,07
+TRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS
+RAZÃO SOCIAL
+FRETE POR CONTA
+CÓDIGO ANTT
+PLACA DO VEÍCULO
+UF
+CNPJ / CPF
+0
+Emitente
+ENDEREÇO
+MUNICÍPIO
+UF
+INSCRIÇÃO ESTADUAL
+QUANTIDADE
+ESPÉCIE
+MARCA
+NUM</pre></td></tr><tr><td>OvisOCR2</td><td class='num'>31.97</td><td class='num'>—</td><td>9/10, missed 5405</td></tr><tr><td colspan='4'><pre>CALCULO DO IMPOSTO
+
+&lt;table border=1&gt;&lt;tr&gt;&lt;td colspan=&quot;2&quot;&gt;BASE DE CÁLCULO DO ICMS&lt;/td&gt;&lt;td colspan=&quot;2&quot;&gt;VALOR DO ICMS&lt;/td&gt;&lt;td&gt;0,00&lt;/td&gt;&lt;td&gt;BASE DE CÁLCULO DO ICMS ST 0,00&lt;/td&gt;&lt;td&gt;VALOR DO ICMS ST 0,00&lt;/td&gt;&lt;td&gt;VALOR APROXIMADO DOS TRIBUTOS 0,00&lt;/td&gt;&lt;td&gt;VALOR TOTAL DOS PRODUTOS 3.254,07&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;VALOR DO FRETE 0,00&lt;/td&gt;&lt;td&gt;VALOR DO SEGURO 0,00&lt;/td&gt;&lt;td&gt;0,00&lt;/td&gt;&lt;td&gt;DESCONTO 0,00&lt;/td&gt;&lt;td&gt;OUTRAS DESPESAS ACESSÓRIAS 0,00&lt;/td&gt;&lt;td&gt;VALOR DO IPI 0,00&lt;/td&gt;&lt;td&gt;VALOR TOTAL DA NOTA 3.254,07&lt;/td&gt;&lt;/tr&gt;&lt;/tab</pre></td></tr><tr><td>PaddleOCR-VL-1.6</td><td class='num'>91.20</td><td class='num'>—</td><td>7/10, missed 3.254,07, 4.000, Emitente</td></tr><tr><td colspan='4'><pre>CALCULO DO IMPOSTO
+BASE DE CÁLCULO DO ICMS
+0,00
+VALOR DO ICMS
+0,00
+BASE DE CÁLCULO DO ICMS ST
+0,00
+VALOR DO ICMS ST
+0,00
+VALOR APROXIMADO DOS TRIBUTOS
+0,00
+VALOR TOTAL DOS PRODUTOS
+3,254,07
+VALOR DO FRETE
+0,00
+VALOR DO SEGURO
+0,00
+DESCONTO
+0,00
+OUTRAS DESPESAS ACESSÓRIAS
+0,00
+VALOR DO IPI
+0,00
+VALOR TOTAL DA NOTA
+3,254,07
+TRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS
+RAZÃO SOCIAL
+ENDEREÇO
+QUANTIDADE 1 ESPÉCIE VOLUMES MARCA NUMIÇIPIO PESO BRUTO INSCRIÇÃO ESTADUAL
+DADOS DO PRODUTO / SERVIÇO
+COD.PROD</pre></td></tr><tr><td>GLM-OCR</td><td class='num'>19.56</td><td class='num'>—</td><td>1/10, missed 5763764, NOTEBOOK, 84713019, 5405, 1.0000, 4.000, Emitente, 2821,85, 117,42</td></tr><tr><td colspan='4'><pre>CALCULO DO IMPOSTO
+BASE DE CÁLCULO DO ICMS
+0,00
+VALOR DO ICMS
+0,00
+BASE DE CÁLCULO DO ICMS ST
+0,00
+VALOR DO ICMS ST
+0,00
+VALOR APROXIMADO DOS TRIBUTOS
+0,00
+VALOR TOTAL DOS PRODUTOS
+3.254,07
+VALOR DO FRETE
+0,00
+VALOR DO SEGURO
+0,00
+DESCONTO
+0,00
+OUTRAS DESPESAS ACESSÓRIAS
+0,00
+VALOR DO IPI
+0,00
+VALOR TOTAL DA NOTA
+3.254,07
+TRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS
+RAZÃO SOCIAL
+FRETE POR CONTA
+CÓDIGO ANTT
+PLACA DO VEÍCULO
+UF
+CNPJ / CPF
+ENDEREÇO
+MARCA
+MUNICIPIO
+UF
+INSCRIÃO ESTADUAL
+ENDEREÇO
+ESPÉC</pre></td></tr><tr><td>LightOnOCR-2-1B</td><td class='num'>18.43</td><td class='num'>—</td><td>10/10</td></tr><tr><td colspan='4'><pre>CÁLCULO DO IMPOSTO
+
+&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&quot;text-align: right;&quot;&gt;
+      &lt;th&gt;BASE DE CÁLCULO DO ICMS&lt;/th&gt;
+      &lt;th&gt;VALOR DO ICMS&lt;/th&gt;
+      &lt;th&gt;BASE DE CÁLCULO DO ICMS ST&lt;/th&gt;
+      &lt;th&gt;VALOR DO ICMS ST&lt;/th&gt;
+      &lt;th&gt;VALOR APROXIMADO DOS TRIBUTOS&lt;/th&gt;
+      &lt;th&gt;VALOR TOTAL DOS PRODUTOS&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0,00&lt;/td&gt;
+      &lt;td&gt;0,00&lt;/td&gt;
+      &lt;td&gt;0,00&lt;/td&gt;
+      &lt;td&gt;3.254,07&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table border=&quot;</pre></td></tr><tr><td>TeleOCR</td><td class='num'>26.20</td><td class='num'>—</td><td>6/10, missed 84713019, 5405, 1.0000, 2821,85</td></tr><tr><td colspan='4'><pre>CALCULO DO IMPOSTO
+
+BASE DE CÁLCULO DO ICMS 0,00 VALOR DO ICMS 0,00 BASE DE CÁLCULO DO ICMS ST 0,00 VALOR DO ICMS ST 0,00 VALOR APROXIMADO DOS TRIBUTOS 0,00 VALOR TOTAL DOS PRODUTOS 3.254,07
+VALOR DO FRETE 0,00 VALOR DO SEGURO 0,00 DESCONTO 0,00 OUTRAS DESPESAS ACESSÓRIAS 0,00 VALOR DO IPI 0,00 VALOR TOTAL DA NOTA 3.254,07
+TRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS
+
+RAZÃO SOCIAL
+FRETE POR CONTA 0 - Emitente CÓDIGO ANTT PLACA DO VEÍCULO UF CNPJ / CPF
+ENDEREÇO MUNICIPIO UFR INSCRIÇÃO
+QUANTIDADE 1</pre></td></tr></tbody></table><h2>Phone photo of a package</h2><p class='muted'>Real photo. Scored on the readable nutrition lines. The tiny print has no full transcript.</p><table><thead><tr><th>Model</th><th>Seconds</th><th>Character accuracy</th><th>Fields</th></tr></thead><tbody><tr><td>RapidOCR</td><td class='num'>2.00</td><td class='num'>—</td><td>8/8</td></tr><tr><td colspan='4'><pre>Nestle
 CHOCOLATERIA
 0800-770241-www.nestle.com.br
 Serviçe Nestle ao Consumidor

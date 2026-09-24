@@ -61,6 +61,24 @@
       ]
     },
     {
+      "id": "table",
+      "task": "Invoice tax and product table",
+      "image": "corpus/pages/table.png",
+      "fields": [
+        "3.254,07",
+        "5763764",
+        "NOTEBOOK",
+        "84713019",
+        "5405",
+        "1.0000",
+        "4.000",
+        "Emitente",
+        "2821,85",
+        "117,42"
+      ],
+      "note": "Real NF-e block. Scored on the filled-in amounts, the product code, NCM, CFOP, freight payer, weight, and the two retained-tax lines. The 0,00 cells are not required."
+    },
+    {
       "id": "photo-label",
       "task": "Phone photo of a package",
       "image": "images/chocolate.jpeg",
@@ -266,15 +284,69 @@
               }
             ]
           }
+        },
+        {
+          "id": "table",
+          "task": "Invoice tax and product table",
+          "seconds": 2.42,
+          "looped": true,
+          "excerpt": "C\u00c1LCULO DO IMPOSTO\nBASE DE C\u00c1LCULO DO ICMS\nVALOR DO ICMS\nBASE DE C\u00c1LCULO DO ICMS ST VALOR DO ICMS ST\nVALOR APROXIMADO DOS TRIBUTOS\nVALOR TOTAL DOS PRODUTOS\n0,00\n0,00\n0,00\n3.254,07\nVALOR DO FRETE\nVALOR DO SEGURO\nDESCONTO\nOUTRAS DESPESAS ACESS\u00d3RIAS\nVALOR DO IPI\nVALOR TOTAL DA NOTA\n0,00\n0,00\n0,00\n3.254,07\nTRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS\nRAZ\u00c3O SOCIAL\nFRETE POR CONTA\nC\u00d3DIGO ANTT\nPLACA DO VE\u00cdCULO\nUF\nCNPJ / CPF\n0\nEmitente\nENDERE\u00c7O\nMUNIC\u00cdPIO\nUF\nINSCRI\u00c7\u00c3O ESTADUAL\nQUANTIDADE\nESP\u00c9CIE\nMARCA\nNUM",
+          "output": "results/outputs/rapidocr/table.md",
+          "fields": {
+            "found": 8,
+            "total": 10,
+            "fields": [
+              {
+                "field": "3.254,07",
+                "hit": true
+              },
+              {
+                "field": "5763764",
+                "hit": true
+              },
+              {
+                "field": "NOTEBOOK",
+                "hit": false
+              },
+              {
+                "field": "84713019",
+                "hit": false
+              },
+              {
+                "field": "5405",
+                "hit": true
+              },
+              {
+                "field": "1.0000",
+                "hit": true
+              },
+              {
+                "field": "4.000",
+                "hit": true
+              },
+              {
+                "field": "Emitente",
+                "hit": true
+              },
+              {
+                "field": "2821,85",
+                "hit": true
+              },
+              {
+                "field": "117,42",
+                "hit": true
+              }
+            ]
+          }
         }
       ],
       "device": "cpu",
       "load_seconds": 0.2,
       "vram_mib": 0.0,
       "mean_cer": 0.16294815357315356,
-      "fields_found": 25,
-      "fields_total": 26,
-      "median_seconds": 1.03
+      "fields_found": 33,
+      "fields_total": 36,
+      "median_seconds": 1.7
     },
     {
       "id": "ovis-ocr",
@@ -464,14 +536,68 @@
               }
             ]
           }
+        },
+        {
+          "id": "table",
+          "task": "Invoice tax and product table",
+          "seconds": 31.97,
+          "looped": true,
+          "excerpt": "CALCULO DO IMPOSTO\n\n<table border=1><tr><td colspan=\"2\">BASE DE C\u00c1LCULO DO ICMS</td><td colspan=\"2\">VALOR DO ICMS</td><td>0,00</td><td>BASE DE C\u00c1LCULO DO ICMS ST 0,00</td><td>VALOR DO ICMS ST 0,00</td><td>VALOR APROXIMADO DOS TRIBUTOS 0,00</td><td>VALOR TOTAL DOS PRODUTOS 3.254,07</td></tr><tr><td>VALOR DO FRETE 0,00</td><td>VALOR DO SEGURO 0,00</td><td>0,00</td><td>DESCONTO 0,00</td><td>OUTRAS DESPESAS ACESS\u00d3RIAS 0,00</td><td>VALOR DO IPI 0,00</td><td>VALOR TOTAL DA NOTA 3.254,07</td></tr></tab",
+          "output": "results/outputs/ovis-ocr/table.md",
+          "fields": {
+            "found": 9,
+            "total": 10,
+            "fields": [
+              {
+                "field": "3.254,07",
+                "hit": true
+              },
+              {
+                "field": "5763764",
+                "hit": true
+              },
+              {
+                "field": "NOTEBOOK",
+                "hit": true
+              },
+              {
+                "field": "84713019",
+                "hit": true
+              },
+              {
+                "field": "5405",
+                "hit": false
+              },
+              {
+                "field": "1.0000",
+                "hit": true
+              },
+              {
+                "field": "4.000",
+                "hit": true
+              },
+              {
+                "field": "Emitente",
+                "hit": true
+              },
+              {
+                "field": "2821,85",
+                "hit": true
+              },
+              {
+                "field": "117,42",
+                "hit": true
+              }
+            ]
+          }
         }
       ],
       "device": "cuda",
       "load_seconds": 40.07,
       "vram_mib": 1934.0,
       "mean_cer": 0.05426416256157635,
-      "fields_found": 25,
-      "fields_total": 26,
+      "fields_found": 34,
+      "fields_total": 36,
       "median_seconds": 34.72
     },
     {
@@ -662,15 +788,69 @@
               }
             ]
           }
+        },
+        {
+          "id": "table",
+          "task": "Invoice tax and product table",
+          "seconds": 91.2,
+          "looped": false,
+          "excerpt": "CALCULO DO IMPOSTO\nBASE DE C\u00c1LCULO DO ICMS\n0,00\nVALOR DO ICMS\n0,00\nBASE DE C\u00c1LCULO DO ICMS ST\n0,00\nVALOR DO ICMS ST\n0,00\nVALOR APROXIMADO DOS TRIBUTOS\n0,00\nVALOR TOTAL DOS PRODUTOS\n3,254,07\nVALOR DO FRETE\n0,00\nVALOR DO SEGURO\n0,00\nDESCONTO\n0,00\nOUTRAS DESPESAS ACESS\u00d3RIAS\n0,00\nVALOR DO IPI\n0,00\nVALOR TOTAL DA NOTA\n3,254,07\nTRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS\nRAZ\u00c3O SOCIAL\nENDERE\u00c7O\nQUANTIDADE 1 ESP\u00c9CIE VOLUMES MARCA NUMI\u00c7IPIO PESO BRUTO INSCRI\u00c7\u00c3O ESTADUAL\nDADOS DO PRODUTO / SERVI\u00c7O\nCOD.PROD",
+          "output": "results/outputs/paddleocr-vl/table.md",
+          "fields": {
+            "found": 7,
+            "total": 10,
+            "fields": [
+              {
+                "field": "3.254,07",
+                "hit": false
+              },
+              {
+                "field": "5763764",
+                "hit": true
+              },
+              {
+                "field": "NOTEBOOK",
+                "hit": true
+              },
+              {
+                "field": "84713019",
+                "hit": true
+              },
+              {
+                "field": "5405",
+                "hit": true
+              },
+              {
+                "field": "1.0000",
+                "hit": true
+              },
+              {
+                "field": "4.000",
+                "hit": false
+              },
+              {
+                "field": "Emitente",
+                "hit": false
+              },
+              {
+                "field": "2821,85",
+                "hit": true
+              },
+              {
+                "field": "117,42",
+                "hit": true
+              }
+            ]
+          }
         }
       ],
       "device": "cuda",
       "load_seconds": 12.93,
       "vram_mib": 1956.0,
       "mean_cer": 0.06606606606606606,
-      "fields_found": 22,
-      "fields_total": 26,
-      "median_seconds": 31.21
+      "fields_found": 29,
+      "fields_total": 36,
+      "median_seconds": 47.66
     },
     {
       "id": "glm-ocr",
@@ -860,15 +1040,69 @@
               }
             ]
           }
+        },
+        {
+          "id": "table",
+          "task": "Invoice tax and product table",
+          "seconds": 19.56,
+          "looped": false,
+          "excerpt": "CALCULO DO IMPOSTO\nBASE DE C\u00c1LCULO DO ICMS\n0,00\nVALOR DO ICMS\n0,00\nBASE DE C\u00c1LCULO DO ICMS ST\n0,00\nVALOR DO ICMS ST\n0,00\nVALOR APROXIMADO DOS TRIBUTOS\n0,00\nVALOR TOTAL DOS PRODUTOS\n3.254,07\nVALOR DO FRETE\n0,00\nVALOR DO SEGURO\n0,00\nDESCONTO\n0,00\nOUTRAS DESPESAS ACESS\u00d3RIAS\n0,00\nVALOR DO IPI\n0,00\nVALOR TOTAL DA NOTA\n3.254,07\nTRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS\nRAZ\u00c3O SOCIAL\nFRETE POR CONTA\nC\u00d3DIGO ANTT\nPLACA DO VE\u00cdCULO\nUF\nCNPJ / CPF\nENDERE\u00c7O\nMARCA\nMUNICIPIO\nUF\nINSCRI\u00c3O ESTADUAL\nENDERE\u00c7O\nESP\u00c9C",
+          "output": "results/outputs/glm-ocr/table.md",
+          "fields": {
+            "found": 1,
+            "total": 10,
+            "fields": [
+              {
+                "field": "3.254,07",
+                "hit": true
+              },
+              {
+                "field": "5763764",
+                "hit": false
+              },
+              {
+                "field": "NOTEBOOK",
+                "hit": false
+              },
+              {
+                "field": "84713019",
+                "hit": false
+              },
+              {
+                "field": "5405",
+                "hit": false
+              },
+              {
+                "field": "1.0000",
+                "hit": false
+              },
+              {
+                "field": "4.000",
+                "hit": false
+              },
+              {
+                "field": "Emitente",
+                "hit": false
+              },
+              {
+                "field": "2821,85",
+                "hit": false
+              },
+              {
+                "field": "117,42",
+                "hit": false
+              }
+            ]
+          }
         }
       ],
       "device": "cuda",
       "load_seconds": 56.78,
       "vram_mib": 2506.0,
       "mean_cer": 0.0,
-      "fields_found": 26,
-      "fields_total": 26,
-      "median_seconds": 2.18
+      "fields_found": 27,
+      "fields_total": 36,
+      "median_seconds": 2.77
     },
     {
       "id": "lighton-ocr",
@@ -1058,15 +1292,69 @@
               }
             ]
           }
+        },
+        {
+          "id": "table",
+          "task": "Invoice tax and product table",
+          "seconds": 18.43,
+          "looped": true,
+          "excerpt": "C\u00c1LCULO DO IMPOSTO\n\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>BASE DE C\u00c1LCULO DO ICMS</th>\n      <th>VALOR DO ICMS</th>\n      <th>BASE DE C\u00c1LCULO DO ICMS ST</th>\n      <th>VALOR DO ICMS ST</th>\n      <th>VALOR APROXIMADO DOS TRIBUTOS</th>\n      <th>VALOR TOTAL DOS PRODUTOS</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>0,00</td>\n      <td>0,00</td>\n      <td>0,00</td>\n      <td>3.254,07</td>\n    </tr>\n  </tbody>\n</table>\n\n<table border=\"",
+          "output": "results/outputs/lighton-ocr/table.md",
+          "fields": {
+            "found": 10,
+            "total": 10,
+            "fields": [
+              {
+                "field": "3.254,07",
+                "hit": true
+              },
+              {
+                "field": "5763764",
+                "hit": true
+              },
+              {
+                "field": "NOTEBOOK",
+                "hit": true
+              },
+              {
+                "field": "84713019",
+                "hit": true
+              },
+              {
+                "field": "5405",
+                "hit": true
+              },
+              {
+                "field": "1.0000",
+                "hit": true
+              },
+              {
+                "field": "4.000",
+                "hit": true
+              },
+              {
+                "field": "Emitente",
+                "hit": true
+              },
+              {
+                "field": "2821,85",
+                "hit": true
+              },
+              {
+                "field": "117,42",
+                "hit": true
+              }
+            ]
+          }
         }
       ],
       "device": "cuda",
       "load_seconds": 7.39,
       "vram_mib": 2374.0,
       "mean_cer": 0.0,
-      "fields_found": 26,
-      "fields_total": 26,
-      "median_seconds": 2.49
+      "fields_found": 36,
+      "fields_total": 36,
+      "median_seconds": 2.87
     },
     {
       "id": "teleocr",
@@ -1256,15 +1544,69 @@
               }
             ]
           }
+        },
+        {
+          "id": "table",
+          "task": "Invoice tax and product table",
+          "seconds": 26.2,
+          "looped": true,
+          "excerpt": "CALCULO DO IMPOSTO\n\nBASE DE C\u00c1LCULO DO ICMS 0,00 VALOR DO ICMS 0,00 BASE DE C\u00c1LCULO DO ICMS ST 0,00 VALOR DO ICMS ST 0,00 VALOR APROXIMADO DOS TRIBUTOS 0,00 VALOR TOTAL DOS PRODUTOS 3.254,07\nVALOR DO FRETE 0,00 VALOR DO SEGURO 0,00 DESCONTO 0,00 OUTRAS DESPESAS ACESS\u00d3RIAS 0,00 VALOR DO IPI 0,00 VALOR TOTAL DA NOTA 3.254,07\nTRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS\n\nRAZ\u00c3O SOCIAL\nFRETE POR CONTA 0 - Emitente C\u00d3DIGO ANTT PLACA DO VE\u00cdCULO UF CNPJ / CPF\nENDERE\u00c7O MUNICIPIO UFR INSCRI\u00c7\u00c3O\nQUANTIDADE 1",
+          "output": "results/outputs/teleocr/table.md",
+          "fields": {
+            "found": 6,
+            "total": 10,
+            "fields": [
+              {
+                "field": "3.254,07",
+                "hit": true
+              },
+              {
+                "field": "5763764",
+                "hit": true
+              },
+              {
+                "field": "NOTEBOOK",
+                "hit": true
+              },
+              {
+                "field": "84713019",
+                "hit": false
+              },
+              {
+                "field": "5405",
+                "hit": false
+              },
+              {
+                "field": "1.0000",
+                "hit": false
+              },
+              {
+                "field": "4.000",
+                "hit": true
+              },
+              {
+                "field": "Emitente",
+                "hit": true
+              },
+              {
+                "field": "2821,85",
+                "hit": false
+              },
+              {
+                "field": "117,42",
+                "hit": true
+              }
+            ]
+          }
         }
       ],
       "device": "cuda",
       "load_seconds": 4.86,
       "vram_mib": 2813.0,
       "mean_cer": 0.35135135135135137,
-      "fields_found": 18,
-      "fields_total": 26,
-      "median_seconds": 2.02
+      "fields_found": 24,
+      "fields_total": 36,
+      "median_seconds": 2.08
     }
   ]
 }

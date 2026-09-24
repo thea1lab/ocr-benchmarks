@@ -11,12 +11,12 @@ Seconds are warm extraction, after the weights load.
 
 | Model | Size | Result | Median s/page | Load s | Character accuracy | Fields |
 | --- | --- | --- | ---: | ---: | ---: | ---: |
-| RapidOCR | PP-OCRv6 small | ok | 1.03 | 0.20 | 84% | 25/26 |
-| OvisOCR2 | 0.8B | ok | 34.72 | 40.07 | 95% | 25/26 |
-| PaddleOCR-VL-1.6 | 0.9B | ok | 31.21 | 12.93 | 93% | 22/26 |
-| GLM-OCR | 0.9B | ok | 2.18 | 56.78 | 100% | 26/26 |
-| LightOnOCR-2-1B | 1B | ok | 2.49 | 7.39 | 100% | 26/26 |
-| TeleOCR | 1.2B | ok | 2.02 | 4.86 | 65% | 18/26 |
+| RapidOCR | PP-OCRv6 small | ok | 1.70 | 0.20 | 84% | 33/36 |
+| OvisOCR2 | 0.8B | ok | 34.72 | 40.07 | 95% | 34/36 |
+| PaddleOCR-VL-1.6 | 0.9B | ok | 47.66 | 12.93 | 93% | 29/36 |
+| GLM-OCR | 0.9B | ok | 2.77 | 56.78 | 100% | 27/36 |
+| LightOnOCR-2-1B | 1B | ok | 2.87 | 7.39 | 100% | 36/36 |
+| TeleOCR | 1.2B | ok | 2.08 | 4.86 | 65% | 24/36 |
 
 ## Pages
 
@@ -555,6 +555,205 @@ Tax 0.00
 Total 18.40
 Card payment
 Thank you
+```
+
+</details>
+
+### Invoice tax and product table
+
+Real NF-e block. Scored on the filled-in amounts, the product code, NCM, CFOP, freight payer, weight, and the two retained-tax lines. The 0,00 cells are not required.
+
+| Model | Seconds | Character accuracy | Fields |
+| --- | ---: | ---: | --- |
+| RapidOCR | 2.42 | — | 8/10, missed NOTEBOOK, 84713019 |
+| OvisOCR2 | 31.97 | — | 9/10, missed 5405 |
+| PaddleOCR-VL-1.6 | 91.20 | — | 7/10, missed 3.254,07, 4.000, Emitente |
+| GLM-OCR | 19.56 | — | 1/10, missed 5763764, NOTEBOOK, 84713019, 5405, 1.0000, 4.000, Emitente, 2821,85, 117,42 |
+| LightOnOCR-2-1B | 18.43 | — | 10/10 |
+| TeleOCR | 26.20 | — | 6/10, missed 84713019, 5405, 1.0000, 2821,85 |
+
+<details><summary>RapidOCR excerpt</summary>
+
+```
+CÁLCULO DO IMPOSTO
+BASE DE CÁLCULO DO ICMS
+VALOR DO ICMS
+BASE DE CÁLCULO DO ICMS ST VALOR DO ICMS ST
+VALOR APROXIMADO DOS TRIBUTOS
+VALOR TOTAL DOS PRODUTOS
+0,00
+0,00
+0,00
+3.254,07
+VALOR DO FRETE
+VALOR DO SEGURO
+DESCONTO
+OUTRAS DESPESAS ACESSÓRIAS
+VALOR DO IPI
+VALOR TOTAL DA NOTA
+0,00
+0,00
+0,00
+3.254,07
+TRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS
+RAZÃO SOCIAL
+FRETE POR CONTA
+CÓDIGO ANTT
+PLACA DO VEÍCULO
+UF
+CNPJ / CPF
+0
+Emitente
+ENDEREÇO
+MUNICÍPIO
+UF
+INSCRIÇÃO ESTADUAL
+QUANTIDADE
+ESPÉCIE
+MARCA
+NUM
+```
+
+</details>
+
+<details><summary>OvisOCR2 excerpt</summary>
+
+```
+CALCULO DO IMPOSTO
+
+<table border=1><tr><td colspan="2">BASE DE CÁLCULO DO ICMS</td><td colspan="2">VALOR DO ICMS</td><td>0,00</td><td>BASE DE CÁLCULO DO ICMS ST 0,00</td><td>VALOR DO ICMS ST 0,00</td><td>VALOR APROXIMADO DOS TRIBUTOS 0,00</td><td>VALOR TOTAL DOS PRODUTOS 3.254,07</td></tr><tr><td>VALOR DO FRETE 0,00</td><td>VALOR DO SEGURO 0,00</td><td>0,00</td><td>DESCONTO 0,00</td><td>OUTRAS DESPESAS ACESSÓRIAS 0,00</td><td>VALOR DO IPI 0,00</td><td>VALOR TOTAL DA NOTA 3.254,07</td></tr></tab
+```
+
+</details>
+
+<details><summary>PaddleOCR-VL-1.6 excerpt</summary>
+
+```
+CALCULO DO IMPOSTO
+BASE DE CÁLCULO DO ICMS
+0,00
+VALOR DO ICMS
+0,00
+BASE DE CÁLCULO DO ICMS ST
+0,00
+VALOR DO ICMS ST
+0,00
+VALOR APROXIMADO DOS TRIBUTOS
+0,00
+VALOR TOTAL DOS PRODUTOS
+3,254,07
+VALOR DO FRETE
+0,00
+VALOR DO SEGURO
+0,00
+DESCONTO
+0,00
+OUTRAS DESPESAS ACESSÓRIAS
+0,00
+VALOR DO IPI
+0,00
+VALOR TOTAL DA NOTA
+3,254,07
+TRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS
+RAZÃO SOCIAL
+ENDEREÇO
+QUANTIDADE 1 ESPÉCIE VOLUMES MARCA NUMIÇIPIO PESO BRUTO INSCRIÇÃO ESTADUAL
+DADOS DO PRODUTO / SERVIÇO
+COD.PROD
+```
+
+</details>
+
+<details><summary>GLM-OCR excerpt</summary>
+
+```
+CALCULO DO IMPOSTO
+BASE DE CÁLCULO DO ICMS
+0,00
+VALOR DO ICMS
+0,00
+BASE DE CÁLCULO DO ICMS ST
+0,00
+VALOR DO ICMS ST
+0,00
+VALOR APROXIMADO DOS TRIBUTOS
+0,00
+VALOR TOTAL DOS PRODUTOS
+3.254,07
+VALOR DO FRETE
+0,00
+VALOR DO SEGURO
+0,00
+DESCONTO
+0,00
+OUTRAS DESPESAS ACESSÓRIAS
+0,00
+VALOR DO IPI
+0,00
+VALOR TOTAL DA NOTA
+3.254,07
+TRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS
+RAZÃO SOCIAL
+FRETE POR CONTA
+CÓDIGO ANTT
+PLACA DO VEÍCULO
+UF
+CNPJ / CPF
+ENDEREÇO
+MARCA
+MUNICIPIO
+UF
+INSCRIÃO ESTADUAL
+ENDEREÇO
+ESPÉC
+```
+
+</details>
+
+<details><summary>LightOnOCR-2-1B excerpt</summary>
+
+```
+CÁLCULO DO IMPOSTO
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>BASE DE CÁLCULO DO ICMS</th>
+      <th>VALOR DO ICMS</th>
+      <th>BASE DE CÁLCULO DO ICMS ST</th>
+      <th>VALOR DO ICMS ST</th>
+      <th>VALOR APROXIMADO DOS TRIBUTOS</th>
+      <th>VALOR TOTAL DOS PRODUTOS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>0,00</td>
+      <td>3.254,07</td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="
+```
+
+</details>
+
+<details><summary>TeleOCR excerpt</summary>
+
+```
+CALCULO DO IMPOSTO
+
+BASE DE CÁLCULO DO ICMS 0,00 VALOR DO ICMS 0,00 BASE DE CÁLCULO DO ICMS ST 0,00 VALOR DO ICMS ST 0,00 VALOR APROXIMADO DOS TRIBUTOS 0,00 VALOR TOTAL DOS PRODUTOS 3.254,07
+VALOR DO FRETE 0,00 VALOR DO SEGURO 0,00 DESCONTO 0,00 OUTRAS DESPESAS ACESSÓRIAS 0,00 VALOR DO IPI 0,00 VALOR TOTAL DA NOTA 3.254,07
+TRANSPORTADOR / VOLUMES TRANSPORTADOS DADOS
+
+RAZÃO SOCIAL
+FRETE POR CONTA 0 - Emitente CÓDIGO ANTT PLACA DO VEÍCULO UF CNPJ / CPF
+ENDEREÇO MUNICIPIO UFR INSCRIÇÃO
+QUANTIDADE 1
 ```
 
 </details>
